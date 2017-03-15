@@ -21,7 +21,7 @@
         </Style>
     </UserControl.Resources>
 
-    <StackPanel>
+    <StackPanel >
         <ItemsControl ItemsSource="{Binding MainCommands, ElementName=RootMainCommands}">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
@@ -29,8 +29,14 @@
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
         </ItemsControl>
-        <StackPanel x:Name="SubMenuPanel" Visibility="Collapsed" Orientation="Horizontal" Height="{Binding CommandHeight, ElementName=RootMainCommands}" Background="{Binding Path=Background, ElementName=RootMainCommands}">
-
+        <StackPanel x:Name="SubMenuPanel" Visibility="Collapsed">
+            <ItemsControl ItemsSource="{Binding SubCommands, ElementName=RootMainCommands}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal" Height="{Binding CommandHeight, ElementName=RootMainCommands}" Background="{Binding Path=Background, ElementName=RootMainCommands}"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
         </StackPanel>
     </StackPanel>
 </UserControl>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Windows.Input;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -40,15 +41,18 @@ namespace CommandBarUWP.CustomControl
 
         private void Expend()
         {
-            SubMenuPanel.Children.Clear();
-            foreach (var cmd in _current.SubCommands)
-            {
-                Button btn = new Button();
-                btn.Content = cmd;
-                SubMenuPanel.Children.Add(btn);
-            }
+            SubCommands = _current.SubCommands;
             SubMenuPanel.Visibility = Visibility.Visible;
             _expend = true;
+        }
+
+        public static readonly DependencyProperty SubCommandsProperty =
+            DependencyProperty.Register("SubCommands", typeof(ObservableCollection<FrameworkElement>), typeof(MenuBar), new PropertyMetadata(new ObservableCollection<FrameworkElement>()));
+
+        public ObservableCollection<FrameworkElement> SubCommands
+        {
+            get { return (ObservableCollection<FrameworkElement>)GetValue(SubCommandsProperty); }
+            set { SetValue(SubCommandsProperty, value); }
         }
 
         private void Collapse()

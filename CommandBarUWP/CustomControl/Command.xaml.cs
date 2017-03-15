@@ -17,7 +17,7 @@ namespace CommandBarUWP.CustomControl
         }
 
         public static readonly DependencyProperty TextProperty =
-        DependencyProperty.Register("Text", typeof(string), typeof(Command), null);
+        DependencyProperty.Register("Text", typeof(FrameworkElement), typeof(Command), null);
 
         public string Text
         {
@@ -26,11 +26,11 @@ namespace CommandBarUWP.CustomControl
         }
 
         public static readonly DependencyProperty SubCommandsProperty =
-        DependencyProperty.Register("SubCommands", typeof(ObservableCollection<string>), typeof(Command), new PropertyMetadata(new ObservableCollection<string>()));
+        DependencyProperty.Register("SubCommands", typeof(ObservableCollection<FrameworkElement>), typeof(Command), new PropertyMetadata(new ObservableCollection<FrameworkElement>()));
 
-        public ObservableCollection<string> SubCommands
+        public ObservableCollection<FrameworkElement> SubCommands
         {
-            get { return (ObservableCollection<string>)GetValue(SubCommandsProperty); }
+            get { return (ObservableCollection<FrameworkElement>)GetValue(SubCommandsProperty); }
             set { SetValue(SubCommandsProperty, value); }
         }
 

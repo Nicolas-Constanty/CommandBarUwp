@@ -5,4 +5,7 @@
     xmlns:local="using:CommandBarUWP"
     RequestedTheme="Light">
 
+    <Application.Resources>
+        <ResourceDictionary Source="Languages/en-EN.xaml"></ResourceDictionary>
+    </Application.Resources>
 </Application>

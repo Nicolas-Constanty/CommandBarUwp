@@ -10,16 +10,8 @@
     x:Name="Root">
 
     <Grid>
-        <!-- replace Command by Click destroy project <3 -->
         <Button Content="{Binding Text, ElementName=Root}" Command="{Binding ClickCommand, ElementName=Root}" Background="{Binding Path=Background, ElementName=Root}" Click="Button_Click" >
 
         </Button>
-        <ItemsControl ItemsSource="{Binding SubCommands, ElementName=RootMainCommands}">
-            <ItemsControl.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <Grid/>
-                </ItemsPanelTemplate>
-            </ItemsControl.ItemsPanel>
-        </ItemsControl>
-        </Grid>
+    </Grid>
 </UserControl>
