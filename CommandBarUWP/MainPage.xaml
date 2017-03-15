@@ -21,7 +21,7 @@
                 <customControl:Command Text="Run" Background="Gray"></customControl:Command>
                 <customControl:Command Text="Cloud" Background="Transparent"></customControl:Command>
                 <customControl:Command Text="Help" Background="Transparent"></customControl:Command>
-                <customControl:Command Text="Coucou" Background="Transparent" Action="{Binding customControl:Command.SelectMenu}">
+                <customControl:Command Text="Coucou" Background="Transparent" ClickCommand="Command_ClickCommand">
                     <customControl:Command.SubCommands>
                         <x:String>Test1</x:String>
                         <x:String>Test2</x:String>
@@ -33,18 +33,3 @@
         </customControl:MenuBar>
     </Grid>
 </Page>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

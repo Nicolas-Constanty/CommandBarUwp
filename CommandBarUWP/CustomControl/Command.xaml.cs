@@ -1,4 +1,6 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Windows.Input;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -32,18 +34,19 @@ namespace CommandBarUWP.CustomControl
             set { SetValue(SubCommandsProperty, value); }
         }
 
-        public static readonly DependencyProperty ActionProperty
-      = DependencyProperty.Register("Action", typeof(ICommand), typeof(Command), null);
-
-        public ICommand Action
+        private EventRegistrationTokenTable<EventHandler<RoutedEventArgs>> m_RoutedEvent = null;
+        public event EventHandler<RoutedEventArgs> ClickCommand
         {
-            get { return (ICommand)GetValue(ActionProperty); }
-            set { SetValue(ActionProperty, value); }
+            add { EventRegistrationTokenTable<EventHandler<RoutedEventArgs>>.GetOrCreateEventRegistrationTokenTable(ref m_RoutedEvent).AddEventHandler(value); }
+            remove { EventRegistrationTokenTable<EventHandler<RoutedEventArgs>>.GetOrCreateEventRegistrationTokenTable(ref m_RoutedEvent).RemoveEventHandler(value); }
+        }
+        internal void OnClickCommand() {
+            EventRegistrationTokenTable<EventHandler<RoutedEventArgs>>.GetOrCreateEventRegistrationTokenTable(ref m_RoutedEvent).InvocationList?.Invoke(this, new RoutedEventArgs());
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Action.Execute(this);
+            OnClickCommand();
         }
     }
 }

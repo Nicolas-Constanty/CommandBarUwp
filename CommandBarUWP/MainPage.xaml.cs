@@ -1,5 +1,7 @@
-﻿using System;
+﻿using CommandBarUWP.CustomControl;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -25,6 +27,11 @@ namespace CommandBarUWP
         public MainPage()
         {
             this.InitializeComponent();
+        }
+
+        private void Command_ClickCommand(object sender, RoutedEventArgs e)
+        {
+            CommandBar.SelectMenu((Command)sender);
         }
     }
 }
