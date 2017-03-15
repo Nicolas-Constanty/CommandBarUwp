@@ -1,0 +1,50 @@
+﻿<Page
+    x:Class="CommandBarUWP.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CommandBarUWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:customControl="using:CommandBarUWP.CustomControl"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <customControl:MenuBar x:Name="CommandBar" CommandHeight="40" VerticalAlignment="Top" Background="Gray">
+            <customControl:MenuBar.MainCommands>
+                <customControl:Command Text="File" Background="Transparent"></customControl:Command>
+                <customControl:Command Text="Edit" Background="Transparent"></customControl:Command>
+                <customControl:Command Text="View" Background="Transparent"></customControl:Command>
+                <customControl:Command Text="Panes" Background="Transparent"></customControl:Command>
+                <customControl:Command Text="Tab" Background="Transparent"></customControl:Command>
+                <customControl:Command Text="Viewport" Background="Transparent"></customControl:Command>
+                <customControl:Command Text="Node" Background="Transparent"></customControl:Command>
+                <customControl:Command Text="Run" Background="Gray"></customControl:Command>
+                <customControl:Command Text="Cloud" Background="Transparent"></customControl:Command>
+                <customControl:Command Text="Help" Background="Transparent"></customControl:Command>
+                <customControl:Command Text="Coucou" Background="Transparent" Action="{Binding customControl:Command.SelectMenu}">
+                    <customControl:Command.SubCommands>
+                        <x:String>Test1</x:String>
+                        <x:String>Test2</x:String>
+                        <x:String>Test3</x:String>
+                    </customControl:Command.SubCommands>
+                </customControl:Command>
+                <customControl:Command Text="Versionning" Background="Transparent"></customControl:Command>
+            </customControl:MenuBar.MainCommands>
+        </customControl:MenuBar>
+    </Grid>
+</Page>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

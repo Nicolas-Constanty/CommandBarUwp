@@ -1,0 +1,36 @@
+﻿<UserControl
+    x:Class="CommandBarUWP.CustomControl.MenuBar"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400"
+    x:Name="RootMainCommands">
+
+    <UserControl.Resources>
+        <Style TargetType="ContentControl">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ContentControl">
+                        <ContentPresenter></ContentPresenter>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
+    <StackPanel>
+        <ItemsControl ItemsSource="{Binding MainCommands, ElementName=RootMainCommands}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel  Orientation="Horizontal"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+        </ItemsControl>
+        <StackPanel x:Name="SubMenuPanel" Visibility="Collapsed" Orientation="Horizontal" Height="{Binding CommandHeight, ElementName=RootMainCommands}" Background="{Binding Path=Background, ElementName=RootMainCommands}">
+
+        </StackPanel>
+    </StackPanel>
+</UserControl>
