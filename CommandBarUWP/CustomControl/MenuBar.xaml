@@ -29,14 +29,18 @@
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
         </ItemsControl>
-        <StackPanel x:Name="SubMenuPanel" Visibility="Collapsed">
-            <ItemsControl ItemsSource="{Binding SubCommands, ElementName=RootMainCommands}">
+        <Grid x:Name="SubMenuPanel" Opacity="0" Visibility="Collapsed">
+            <Grid.RenderTransform>
+                <TranslateTransform x:Name="SlideInTransform" Y="-50" />
+            </Grid.RenderTransform>
+            <ItemsControl ItemsSource="{Binding CurrentSubCommands, ElementName=RootMainCommands}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
-                        <StackPanel Orientation="Horizontal" Height="{Binding CommandHeight, ElementName=RootMainCommands}" Background="{Binding Path=Background, ElementName=RootMainCommands}"/>
+                        <StackPanel Orientation="Horizontal" Height="{Binding CommandHeight, ElementName=RootMainCommands}" Background="{Binding Path=Background, ElementName=RootMainCommands}">
+                        </StackPanel>
                     </ItemsPanelTemplate>
                 </ItemsControl.ItemsPanel>
             </ItemsControl>
-        </StackPanel>
+        </Grid>
     </StackPanel>
 </UserControl>

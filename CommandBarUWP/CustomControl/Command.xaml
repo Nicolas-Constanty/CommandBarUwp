@@ -10,7 +10,10 @@
     x:Name="Root">
 
     <Grid>
-        <Button Content="{Binding Text, ElementName=Root}" Command="{Binding ClickCommand, ElementName=Root}" Background="{Binding Path=Background, ElementName=Root}" Click="Button_Click" >
+        <Button 
+            Content="{Binding Text, ElementName=Root}"
+            Background="{Binding Path=Background, ElementName=Root}" 
+            Click="Button_Click" >
 
         </Button>
     </Grid>

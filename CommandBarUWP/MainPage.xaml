@@ -9,25 +9,29 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <customControl:MenuBar x:Name="CommandBar" CommandHeight="40" VerticalAlignment="Top" Background="Gray">
+        <StackPanel></StackPanel>
+        <customControl:MenuBar x:Name="CommandBar" VerticalAlignment="Top" Background="Gray">
             <customControl:MenuBar.MainCommands>
-                <customControl:Command x:Uid="_File" Text=""></customControl:Command>
-                <customControl:Command Text="Edit"></customControl:Command>
-                <customControl:Command Text="View"></customControl:Command>
-                <customControl:Command Text="Panes"></customControl:Command>
-                <customControl:Command Text="Tab"></customControl:Command>
-                <customControl:Command Text="Viewport"></customControl:Command>
-                <customControl:Command Text="Node"></customControl:Command>
-                <customControl:Command Text="Run"></customControl:Command>
-                <customControl:Command Text="Cloud"></customControl:Command>
-                <customControl:Command Text="Help"></customControl:Command>
-                <customControl:Command Text="Coucou" ClickCommand="Command_ClickCommand">
+                <customControl:Command x:Uid="_File" Text="File" ClickCommand="Command_ClickCommand">
                     <customControl:Command.SubCommands>
                         <Button Content="Test1"></Button>
                         <Button Content="Test2"></Button>
                     </customControl:Command.SubCommands>
                 </customControl:Command>
-                <customControl:Command Text="Versionning"></customControl:Command>
+                <customControl:Command x:Uid="_Edit" Text="Edit" ClickCommand="Command_ClickCommand">
+                    <customControl:Command.SubCommands>
+                        <Button Content="Test1"></Button>
+                    </customControl:Command.SubCommands>
+                </customControl:Command>
+                <customControl:Command x:Uid="_View" Text="View" ClickCommand="Command_ClickCommand"></customControl:Command>
+                <customControl:Command x:Uid="_Panes" Text="Panes" ClickCommand="Command_ClickCommand"></customControl:Command>
+                <customControl:Command x:Uid="_Tab" Text="Tab" ClickCommand="Command_ClickCommand"></customControl:Command>
+                <customControl:Command x:Uid="_Viewport" Text="Viewport" ClickCommand="Command_ClickCommand"></customControl:Command>
+                <customControl:Command x:Uid="_Node" Text="Node" ClickCommand="Command_ClickCommand"></customControl:Command>
+                <customControl:Command x:Uid="_Run" Text="Run" ClickCommand="Command_ClickCommand"></customControl:Command>
+                <customControl:Command x:Uid="_Cloud" Text="Cloud"  ClickCommand="Command_ClickCommand"></customControl:Command>
+                <customControl:Command x:Uid="_Help" Text="Help" ClickCommand="Command_ClickCommand"></customControl:Command>
+                <customControl:Command x:Uid="_Versionning" Text="Versionning" ClickCommand="Command_ClickCommand"></customControl:Command>
             </customControl:MenuBar.MainCommands>
         </customControl:MenuBar>
     </Grid>
