@@ -9,357 +9,139 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <StackPanel></StackPanel>
-        <customControl:MenuBar x:Name="CommandBar" VerticalAlignment="Top" Background="Gray">
-            <customControl:MenuBar.MainCommands>
-                <customControl:Command x:Uid="_File" Text="File" ClickCommand="Command_ClickCommand">
-                    <customControl:Command.SubCommands>
-                        <Button>
-                            <StackPanel Orientation="Horizontal">
-                                <Image></Image>
-                                <TextBlock x:Uid="_NewWindow" Text="New Window"></TextBlock>
-                            </StackPanel>
-                        </Button>
-                        <Button>
-                            <StackPanel Orientation="Horizontal">
-                                <Image></Image>
-                                <TextBlock x:Uid="_NewProject" Text="New Project"></TextBlock>
-                            </StackPanel>
-                        </Button>
-                        <Button>
-                            <StackPanel Orientation="Horizontal">
-                                <Image></Image>
-                                <TextBlock x:Uid="_OpenProject" Text="Open Project"></TextBlock>
-                            </StackPanel>
-                        </Button>
-                        <Button>
-                            <StackPanel Orientation="Horizontal">
-                                <Image></Image>
-                                <TextBlock x:Uid="_Save" Text="Save"></TextBlock>
-                            </StackPanel>
-                        </Button>
-                        <Button>
-                            <StackPanel Orientation="Horizontal">
-                                <Image></Image>
-                                <TextBlock x:Uid="_SaveAs"></TextBlock>
-                            </StackPanel>
-                        </Button>
-                        <Button>
-                            <StackPanel Orientation="Horizontal">
-                                <Image></Image>
-                                <TextBlock x:Uid="_SaveAll"></TextBlock>
-                            </StackPanel>
-                        </Button>
-                        <Button>
-                            <StackPanel Orientation="Horizontal">
-                                <Image></Image>
-                                <TextBlock x:Uid="_Close"></TextBlock>
-                            </StackPanel>
-                        </Button>
-                    </customControl:Command.SubCommands>
-                </customControl:Command>
-                <customControl:Command x:Uid="_Edit" Text="Edit" ClickCommand="Command_ClickCommand">
-                    <customControl:Command.SubCommands>
-                        <Button>
-                            <StackPanel Orientation="Horizontal">
-                                <Image></Image>
-                                <TextBlock x:Uid="_Undo" Text="Save"></TextBlock>
-                            </StackPanel>
-                        </Button>
-                        <Button>
-                            <StackPanel Orientation="Horizontal">
-                                <Image></Image>
-                                <TextBlock x:Uid="_Redo"></TextBlock>
-                            </StackPanel>
-                        </Button>
-                        <Button>
-                            <StackPanel Orientation="Horizontal">
-                                <Image></Image>
-                                <TextBlock x:Uid="_Cut"></TextBlock>
-                            </StackPanel>
-                        </Button>
-                        <Button>
-                            <StackPanel Orientation="Horizontal">
-                                <Image></Image>
-                                <TextBlock x:Uid="_Copy"></TextBlock>
-                            </StackPanel>
-                        </Button>
-                        <Button>
-                            <StackPanel Orientation="Horizontal">
-                                <Image></Image>
-                                <TextBlock x:Uid="_Paste"></TextBlock>
-                            </StackPanel>
-                        </Button>
-                        <Button>
-                            <StackPanel Orientation="Horizontal">
-                                <Image></Image>
-                                <TextBlock x:Uid="_Delete"></TextBlock>
-                            </StackPanel>
-                        </Button>
-                        <Button>
-                            <StackPanel Orientation="Horizontal">
-                                <Image></Image>
-                                <TextBlock x:Uid="_SelectAll"></TextBlock>
-                            </StackPanel>
-                        </Button>
-                        <Button>
-                            <StackPanel Orientation="Horizontal">
-                                <Image></Image>
-                                <TextBlock x:Uid="_InvertSelect"></TextBlock>
-                            </StackPanel>
-                        </Button>
-                        <Button Click="ChangeLanguage">
-                            <StackPanel Orientation="Horizontal">
-                                <Image></Image>
-                                <TextBlock x:Uid="_Settings"></TextBlock>
-                            </StackPanel>
-                        </Button>
-                    </customControl:Command.SubCommands>
-                </customControl:Command>
-                <customControl:Command x:Uid="_View" Text="View" ClickCommand="Command_ClickCommand">
-                    <customControl:Command.SubCommands>
-                        <Button>
-                            <StackPanel Orientation="Horizontal">
-                                <Image></Image>
-                                <TextBlock x:Uid="_FullScreen" Text="Save"></TextBlock>
-                            </StackPanel>
-                        </Button>
-                        <Button>
-                            <StackPanel Orientation="Horizontal">
-                                <Image></Image>
-                                <TextBlock x:Uid="_MenuBar"></TextBlock>
-                            </StackPanel>
-                        </Button>
-                        <Button>
-                            <StackPanel Orientation="Horizontal">
-                                <Image></Image>
-                                <TextBlock x:Uid="_FontSizeUp"></TextBlock>
-                            </StackPanel>
-                        </Button>
-                        <Button>
-                            <StackPanel Orientation="Horizontal">
-                                <Image></Image>
-                                <TextBlock x:Uid="_FontSizeDown"></TextBlock>
-                            </StackPanel>
-                        </Button>
-                        <Button>
-                            <StackPanel Orientation="Horizontal">
-                                <Image></Image>
-                                <TextBlock x:Uid="_ResetFontSize"></TextBlock>
-                            </StackPanel>
-                        </Button>
-                        <Button>
-                            <StackPanel Orientation="Horizontal">
-                                <Image></Image>
-                                <TextBlock x:Uid="_Console"></TextBlock>
-                            </StackPanel>
-                        </Button>
-                        <Button>
-                            <StackPanel Orientation="Horizontal">
-                                <Image></Image>
-                                <TextBlock x:Uid="_PropertyPanel"></TextBlock>
-                            </StackPanel>
-                        </Button>
-                    </customControl:Command.SubCommands>
-                </customControl:Command>
-                <customControl:Command x:Uid="_Panes" Text="Panes" ClickCommand="Command_ClickCommand">
-                    <customControl:Command.SubCommands>
-                        <Button>
-                            <StackPanel Orientation="Horizontal">
-                                <Image></Image>
-                                <TextBlock x:Uid="_SplitLeft" Text="Save"></TextBlock>
-                            </StackPanel>
-                        </Button>
-                        <Button>
-                            <StackPanel Orientation="Horizontal">
-                                <Image></Image>
-                                <TextBlock x:Uid="_SplitRight"></TextBlock>
-                            </StackPanel>
-                        </Button>
-                        <Button>
-                            <StackPanel Orientation="Horizontal">
-                                <Image></Image>
-                                <TextBlock x:Uid="_SplitUp"></TextBlock>
-                            </StackPanel>
-                        </Button>
-                        <Button>
-                            <StackPanel Orientation="Horizontal">
-                                <Image></Image>
-                                <TextBlock x:Uid="_SplitDown"></TextBlock>
-                            </StackPanel>
-                        </Button>
-                        <Button>
-                            <StackPanel Orientation="Horizontal">
-                                <Image></Image>
-                                <TextBlock x:Uid="_NextPane"></TextBlock>
-                            </StackPanel>
-                        </Button>
-                        <Button>
-                            <StackPanel Orientation="Horizontal">
-                                <Image></Image>
-                                <TextBlock x:Uid="_PrevPane"></TextBlock>
-                            </StackPanel>
-                        </Button>
-                    </customControl:Command.SubCommands>
-                </customControl:Command>
-                <customControl:Command x:Uid="_Tab" Text="Tab" ClickCommand="Command_ClickCommand">
-                    <customControl:Command.SubCommands>
-                        <Button>
-                            <StackPanel Orientation="Horizontal">
-                                <Image></Image>
-                                <TextBlock x:Uid="_NextTab" Text="Save"></TextBlock>
-                            </StackPanel>
-                        </Button>
-                        <Button>
-                            <StackPanel Orientation="Horizontal">
-                                <Image></Image>
-                                <TextBlock x:Uid="_PrevTab"></TextBlock>
-                            </StackPanel>
-                        </Button>
-                        <Button>
-                            <StackPanel Orientation="Horizontal">
-                                <Image></Image>
-                                <TextBlock x:Uid="_CloseTab"></TextBlock>
-                            </StackPanel>
-                        </Button>
-                        <Button>
-                            <StackPanel Orientation="Horizontal">
-                                <Image></Image>
-                                <TextBlock x:Uid="_History"></TextBlock>
-                            </StackPanel>
-                        </Button>
-                    </customControl:Command.SubCommands>
-                </customControl:Command>
-                <customControl:Command x:Uid="_Viewport" Text="Viewport" ClickCommand="Command_ClickCommand"></customControl:Command>
-                <customControl:Command x:Uid="_Node" Text="Node" ClickCommand="Command_ClickCommand">
-                    <customControl:Command.SubCommands>
-                        <Button>
-                            <StackPanel Orientation="Horizontal">
-                                <Image></Image>
-                                <TextBlock x:Uid="_NewNode" Text="Save"></TextBlock>
-                            </StackPanel>
-                        </Button>
-                        <Button>
-                            <StackPanel Orientation="Horizontal">
-                                <Image></Image>
-                                <TextBlock x:Uid="_DeleteNode"></TextBlock>
-                            </StackPanel>
-                        </Button>
-                        <Button>
-                            <StackPanel Orientation="Horizontal">
-                                <Image></Image>
-                                <TextBlock x:Uid="_ImportNode"></TextBlock>
-                            </StackPanel>
-                        </Button>
-                        <Button>
-                            <StackPanel Orientation="Horizontal">
-                                <Image></Image>
-                                <TextBlock x:Uid="_ExportNode"></TextBlock>
-                            </StackPanel>
-                        </Button>
-                    </customControl:Command.SubCommands>
-                </customControl:Command>
-                <customControl:Command x:Uid="_Run" Text="Run" ClickCommand="Command_ClickCommand">
-                    <customControl:Command.SubCommands>
-                        <Button>
-                            <StackPanel Orientation="Horizontal">
-                                <Image></Image>
-                                <TextBlock x:Uid="_Build" Text="Save"></TextBlock>
-                            </StackPanel>
-                        </Button>
-                        <Button>
-                            <StackPanel Orientation="Horizontal">
-                                <Image></Image>
-                                <TextBlock x:Uid="_Run"></TextBlock>
-                            </StackPanel>
-                        </Button>
-                        <Button>
-                            <StackPanel Orientation="Horizontal">
-                                <Image></Image>
-                                <TextBlock x:Uid="_RunDebug"></TextBlock>
-                            </StackPanel>
-                        </Button>
-                        <Button>
-                            <StackPanel Orientation="Horizontal">
-                                <Image></Image>
-                                <TextBlock x:Uid="_Pause"></TextBlock>
-                            </StackPanel>
-                        </Button>
-                        <Button>
-                            <StackPanel Orientation="Horizontal">
-                                <Image></Image>
-                                <TextBlock x:Uid="_Stop"></TextBlock>
-                            </StackPanel>
-                        </Button>
-                    </customControl:Command.SubCommands>
-                </customControl:Command>
-                <customControl:Command x:Uid="_Cloud" Text="Cloud"  ClickCommand="Command_ClickCommand">
-                    <customControl:Command.SubCommands>
-                        <Button>
-                            <StackPanel Orientation="Horizontal">
-                                <Image></Image>
-                                <TextBlock x:Uid="_Upload" Text="Save"></TextBlock>
-                            </StackPanel>
-                        </Button>
-                        <Button>
-                            <StackPanel Orientation="Horizontal">
-                                <Image></Image>
-                                <TextBlock x:Uid="_Download"></TextBlock>
-                            </StackPanel>
-                        </Button>
-                        <Button>
-                            <StackPanel Orientation="Horizontal">
-                                <Image></Image>
-                                <TextBlock x:Uid="_Store"></TextBlock>
-                            </StackPanel>
-                        </Button>
-                    </customControl:Command.SubCommands>
-                </customControl:Command>
-                <customControl:Command x:Uid="_Help" Text="Help" ClickCommand="Command_ClickCommand">
-                    <customControl:Command.SubCommands>
-                        <Button>
-                            <StackPanel Orientation="Horizontal">
-                                <Image></Image>
-                                <TextBlock x:Uid="_About" Text="Save"></TextBlock>
-                            </StackPanel>
-                        </Button>
-                        <Button>
-                            <StackPanel Orientation="Horizontal">
-                                <Image></Image>
-                                <TextBlock x:Uid="_Documentation"></TextBlock>
-                            </StackPanel>
-                        </Button>
-                    </customControl:Command.SubCommands>
-                </customControl:Command>
-                <customControl:Command x:Uid="_Versionning" Text="Versionning" ClickCommand="Command_ClickCommand">
-                    <customControl:Command.SubCommands>
-                        <Button>
-                            <StackPanel Orientation="Horizontal">
-                                <Image></Image>
-                                <TextBlock x:Uid="_NewRepo" Text="Save"></TextBlock>
-                            </StackPanel>
-                        </Button>
-                        <Button>
-                            <StackPanel Orientation="Horizontal">
-                                <Image></Image>
-                                <TextBlock x:Uid="_CloneRepo"></TextBlock>
-                            </StackPanel>
-                        </Button>
-                        <Button>
-                            <StackPanel Orientation="Horizontal">
-                                <Image></Image>
-                                <TextBlock x:Uid="_Synchronize"></TextBlock>
-                            </StackPanel>
-                        </Button>
-                        <Button>
-                            <StackPanel Orientation="Horizontal">
-                                <Image></Image>
-                                <TextBlock x:Uid="_Push"></TextBlock>
-                            </StackPanel>
-                        </Button>
-                    </customControl:Command.SubCommands>
-                </customControl:Command>
-            </customControl:MenuBar.MainCommands>
-        </customControl:MenuBar>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <!--<RelativePanel>-->
+        <Grid Background="#424242">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button BorderThickness="0" 
+                    Background="{ThemeResource SystemControlHighlightAccentBrush}" 
+                    Grid.Column="0" 
+                    FontSize="30" FontFamily="Segoe MDL2 Assets" 
+                    Content="&#xE700;"
+                    Click="HamburgerButton_Click" VerticalAlignment="Stretch" 
+                    />
+            <customControl:MenuBar Grid.Column="1" x:Name="CommandBar" VerticalAlignment="Top" Background="#424242">
+                <customControl:MenuBar.MainCommands>
+                    <customControl:Command FontSize="20" x:Uid="_Edit" Text="Edit" ClickCommand="Command_ClickCommand">
+                        <customControl:Command.SubCommands>
+                            <customControl:CommandButton x:Uid="_Undo"/>
+                            <customControl:CommandButton x:Uid="_Redo"/>
+                            <customControl:CommandButton x:Uid="_Cut"/>
+                            <customControl:CommandButton x:Uid="_Copy"/>
+                            <customControl:CommandButton x:Uid="_Paste"/>
+                            <customControl:CommandButton x:Uid="_Delete"/>
+                            <customControl:CommandButton x:Uid="_SelectAll"/>
+                            <customControl:CommandButton x:Uid="_InvertSelect"/>
+                            <customControl:CommandButton x:Uid="_Settings" Click="ChangeLanguage"/>
+                        </customControl:Command.SubCommands>
+                    </customControl:Command>
+                    <customControl:Command x:Uid="_View" FontSize="20" Text="View" ClickCommand="Command_ClickCommand">
+                        <customControl:Command.SubCommands>
+                            <customControl:CommandButton x:Uid="_FullScreen"/>
+                            <customControl:CommandButton x:Uid="_MenuBar"/>
+                            <customControl:CommandButton x:Uid="_FontSizeUp"/>
+                            <customControl:CommandButton x:Uid="_FontSizeDown"/>
+                            <customControl:CommandButton x:Uid="_ResetFontSize"/>
+                            <customControl:CommandButton x:Uid="_Console"/>
+                            <customControl:CommandButton x:Uid="_PropertyPanel"/>
+                        </customControl:Command.SubCommands>
+                    </customControl:Command>
+                    <customControl:Command x:Uid="_Panes" FontSize="20" Text="Panes" ClickCommand="Command_ClickCommand">
+                        <customControl:Command.SubCommands>
+                            <customControl:CommandButton x:Uid="_SplitLeft"/>
+                            <customControl:CommandButton x:Uid="_SplitRight"/>
+                            <customControl:CommandButton x:Uid="_SplitUp"/>
+                            <customControl:CommandButton x:Uid="_SplitDown"/>
+                            <customControl:CommandButton x:Uid="_NextPane"/>
+                            <customControl:CommandButton x:Uid="_PrevPane"/>
+                        </customControl:Command.SubCommands>
+                    </customControl:Command>
+                    <customControl:Command x:Uid="_Tab" FontSize="20" Text="Tab" ClickCommand="Command_ClickCommand">
+                        <customControl:Command.SubCommands>
+                            <customControl:CommandButton x:Uid="_NextTab"/>
+                            <customControl:CommandButton x:Uid="_PrevTab"/>
+                            <customControl:CommandButton x:Uid="_CloseTab"/>
+                            <customControl:CommandButton x:Uid="_History"/>
+                        </customControl:Command.SubCommands>
+                    </customControl:Command>
+                    <customControl:Command x:Uid="_Viewport" FontSize="20" Text="Viewport" ClickCommand="Command_ClickCommand"></customControl:Command>
+                    <customControl:Command x:Uid="_Node" FontSize="20" Text="Node" ClickCommand="Command_ClickCommand">
+                        <customControl:Command.SubCommands>
+                            <customControl:CommandButton x:Uid="_NewNode"/>
+                            <customControl:CommandButton x:Uid="_DeleteNode"/>
+                            <customControl:CommandButton x:Uid="_ImportNode"/>
+                            <customControl:CommandButton x:Uid="_ExportNode"/>
+                        </customControl:Command.SubCommands>
+                    </customControl:Command>
+                    <customControl:Command x:Uid="_Run" FontSize="20" Text="Run" ClickCommand="Command_ClickCommand">
+                        <customControl:Command.SubCommands>
+                            <customControl:CommandButton x:Uid="_Build"/>
+                            <customControl:CommandButton x:Uid="_Run"/>
+                            <customControl:CommandButton x:Uid="_RunDebug"/>
+                            <customControl:CommandButton x:Uid="_Pause"/>
+                            <customControl:CommandButton x:Uid="_Stop"/>
+                        </customControl:Command.SubCommands>
+                    </customControl:Command>
+                    <customControl:Command x:Uid="_Cloud" FontSize="20" Text="Cloud"  ClickCommand="Command_ClickCommand">
+                        <customControl:Command.SubCommands>
+                            <customControl:CommandButton x:Uid="_Upload"/>
+                            <customControl:CommandButton x:Uid="_Download"/>
+                            <customControl:CommandButton x:Uid="_Store"/>
+                        </customControl:Command.SubCommands>
+                    </customControl:Command>
+                    <customControl:Command x:Uid="_Help" FontSize="20" Text="Help" ClickCommand="Command_ClickCommand">
+                        <customControl:Command.SubCommands>
+                            <customControl:CommandButton x:Uid="_About"/>
+                            <customControl:CommandButton x:Uid="_Documentation"/>
+                        </customControl:Command.SubCommands>
+                    </customControl:Command>
+                    <customControl:Command x:Uid="_Versionning" FontSize="20" Text="Versionning" ClickCommand="Command_ClickCommand">
+                        <customControl:Command.SubCommands>
+                            <customControl:CommandButton x:Uid="_NewRepo"/>
+                            <customControl:CommandButton x:Uid="_CloneRepo"/>
+                            <customControl:CommandButton x:Uid="_Synchronize"/>
+                            <customControl:CommandButton x:Uid="_Push"/>
+                        </customControl:Command.SubCommands>
+                    </customControl:Command>
+                </customControl:MenuBar.MainCommands>
+            </customControl:MenuBar>
+        </Grid>
+        <!--</RelativePanel>-->
+        <SplitView Name="MySplitView" 
+                   Grid.Row="1" 
+                   DisplayMode="CompactOverlay" 
+                   OpenPaneLength="256" 
+                   CompactPaneLength="0" 
+                   HorizontalAlignment="Left">
+            <SplitView.Pane>
+                <ListBox SelectionMode="Single" 
+                         Name="IconsListBox">
+                    <ListBoxItem >
+                        <customControl:CommandButton FontSize="24" x:Uid="_NewWindow" Text="New Window"/>
+                    </ListBoxItem>
+                    <ListBoxItem >
+                        <customControl:CommandButton FontSize="24" x:Uid="_OpenProject" Text="Open project"/>
+                    </ListBoxItem>
+                    <ListBoxItem >
+                        <customControl:CommandButton FontSize="24" x:Uid="_Save" Text="Save"/>
+                    </ListBoxItem>
+                    <ListBoxItem >
+                        <customControl:CommandButton FontSize="24" x:Uid="_SaveAs" Text="Save as"/>
+                    </ListBoxItem>
+                    <ListBoxItem >
+                        <customControl:CommandButton FontSize="24" x:Uid="_SaveAll" Text="Save all"/>
+                    </ListBoxItem>
+                </ListBox>
+            </SplitView.Pane>
+            <SplitView.Content>
+                <TextBlock Name="ResultTextBlock" />
+            </SplitView.Content>
+        </SplitView>
     </Grid>
 </Page>

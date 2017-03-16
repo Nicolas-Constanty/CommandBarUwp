@@ -1,0 +1,19 @@
+﻿<UserControl
+    x:Class="CommandBarUWP.CustomControl.CommandButton"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CommandBarUWP.CustomControl"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    x:Name="Root">
+
+    <Grid>
+        <Button Style="{StaticResource SubCommandButton}" Click="Button_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="{Binding Icone, ElementName=Root}"></Image>
+                <TextBlock FontFamily="{Binding Path=FontFamily, ElementName=Root}" FontSize="{Binding Path=FontSize, ElementName=Root}" Text="{Binding Text, ElementName=Root}"></TextBlock>
+            </StackPanel>
+        </Button>
+    </Grid>
+</UserControl>

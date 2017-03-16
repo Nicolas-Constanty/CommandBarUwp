@@ -25,14 +25,14 @@
         <ItemsControl ItemsSource="{Binding MainCommands, ElementName=RootMainCommands}">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <StackPanel  Orientation="Horizontal"/>
+                    <StackPanel  Orientation="Horizontal" Background="{ThemeResource SystemControlHighlightAccentBrush}"/>
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
         </ItemsControl>
         <Grid x:Name="SubMenuPanel" Opacity="0" Visibility="Collapsed">
-            <Grid.RenderTransform>
+            <!--<Grid.RenderTransform>
                 <TranslateTransform x:Name="SlideInTransform" Y="-50" />
-            </Grid.RenderTransform>
+            </Grid.RenderTransform>-->
             <ItemsControl ItemsSource="{Binding CurrentSubCommands, ElementName=RootMainCommands}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>

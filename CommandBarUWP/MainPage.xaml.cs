@@ -8,6 +8,8 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Globalization;
+using Windows.UI;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -28,8 +30,24 @@ namespace CommandBarUWP
         public MainPage()
         {
             this.InitializeComponent();
+            Init();
+        }
+
+        private void Init()
+        {
             Windows.ApplicationModel.Resources.Core.ResourceContext.GetForCurrentView().Reset();
             Windows.ApplicationModel.Resources.Core.ResourceContext.GetForViewIndependentUse().Reset();
+
+            ApplicationViewTitleBar titleBar = ApplicationView.GetForCurrentView().TitleBar;
+            titleBar.BackgroundColor = (Application.Current.Resources["SystemControlHighlightAccentBrush"] as SolidColorBrush).Color;
+            titleBar.ForegroundColor = Colors.White;
+            titleBar.ButtonBackgroundColor = (Application.Current.Resources["SystemControlHighlightAccentBrush"] as SolidColorBrush).Color;
+            titleBar.ButtonForegroundColor = Colors.White;
+
+            titleBar.InactiveBackgroundColor = (Application.Current.Resources["SystemControlHighlightAccentBrush"] as SolidColorBrush).Color;
+            titleBar.InactiveForegroundColor = Colors.White;
+
+            titleBar.ButtonInactiveBackgroundColor = (Application.Current.Resources["SystemControlHighlightAccentBrush"] as SolidColorBrush).Color;
         }
 
         private void Command_ClickCommand(object sender, RoutedEventArgs e)
@@ -63,6 +81,11 @@ namespace CommandBarUWP
                 Frame.BackStack.Remove(Frame.BackStack.Last());
             }
 
+        }
+
+        private void HamburgerButton_Click(object sender, RoutedEventArgs e)
+        {
+            MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;
         }
     }
 }

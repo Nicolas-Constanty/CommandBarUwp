@@ -11,8 +11,11 @@
 
     <Grid>
         <Button 
+            Style="{StaticResource CommandButton}"
             Content="{Binding Text, ElementName=Root}"
             Background="{Binding Path=Background, ElementName=Root}" 
+            FontSize="{Binding Path=FontSize, ElementName=Root}" 
+            FontFamily="{Binding Path=FontFamily, ElementName=Root}" 
             Click="Button_Click" >
 
         </Button>

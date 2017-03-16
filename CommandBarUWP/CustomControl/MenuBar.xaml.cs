@@ -18,12 +18,16 @@ namespace CommandBarUWP.CustomControl
         private Storyboard _slideIn = null;
         private SolidColorBrush _activeBrush;
         private SolidColorBrush _baseBrush;
+        private TranslateTransform _slideInTransform;
 
         public MenuBar()
         {
             this.InitializeComponent();
-            _activeBrush = new SolidColorBrush(Windows.UI.Colors.Gray);
+            _activeBrush = new SolidColorBrush(Windows.UI.Colors.DarkGray);
+            //Application.Current.Resources["SystemControlHighlightAccentBrush"] as SolidColorBrush;
             _baseBrush = new SolidColorBrush(Windows.UI.Colors.Transparent);
+            _slideInTransform = new TranslateTransform();
+            _slideInTransform.Y = -50;
         }
 
         private DoubleAnimationUsingKeyFrames CreateYAnimation(double value, double time)
@@ -37,7 +41,7 @@ namespace CommandBarUWP.CustomControl
             animationKeyFrames.KeyFrames.Add(keyFrameStart);
 
             Storyboard.SetTargetProperty(animationKeyFrames, "Y");
-            Storyboard.SetTarget(animationKeyFrames, SlideInTransform);
+            Storyboard.SetTarget(animationKeyFrames, _slideInTransform);
             return animationKeyFrames;
         }
 
@@ -61,8 +65,8 @@ namespace CommandBarUWP.CustomControl
         {
             _slideIn = new Storyboard();
 
-            _slideIn.Children.Add(CreateYAnimation(0, 150));
-            _slideIn.Children.Add(CreateOpacityAnimation(1, 200));
+            //_slideIn.Children.Add(CreateYAnimation(0, 150));
+            _slideIn.Children.Add(CreateOpacityAnimation(1, 100));
 
             _slideIn.Completed += SlideIn_Completed;
         }
@@ -71,8 +75,8 @@ namespace CommandBarUWP.CustomControl
         {
             _slideOut = new Storyboard();
 
-            _slideOut.Children.Add(CreateYAnimation(-SubMenuPanel.ActualHeight, 200));
-            _slideOut.Children.Add(CreateOpacityAnimation(0, 150));
+            //_slideOut.Children.Add(CreateYAnimation(-SubMenuPanel.ActualHeight, 200));
+            _slideOut.Children.Add(CreateOpacityAnimation(0, 100));
 
             _slideOut.Completed += SlideOut_Completed;
         }
@@ -144,7 +148,7 @@ namespace CommandBarUWP.CustomControl
             if (_current != null)
                 _current.Background = _baseBrush;
             _current = cmd;
-            _current.Background = _activeBrush;
+            _current.Background = Background;
            Expend();
         }
     }

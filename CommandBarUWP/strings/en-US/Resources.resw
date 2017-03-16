@@ -225,6 +225,9 @@
   <data name="_NextPane.Text" xml:space="preserve">
     <value>Next pane</value>
   </data>
+  <data name="_NextTab.Text" xml:space="preserve">
+    <value>Next tab</value>
+  </data>
   <data name="_Node.Text" xml:space="preserve">
     <value>Node</value>
   </data>
@@ -245,6 +248,9 @@
   </data>
   <data name="_PrevPane.Text" xml:space="preserve">
     <value>Prev pane</value>
+  </data>
+  <data name="_PrevTab.Text" xml:space="preserve">
+    <value>Previous tab</value>
   </data>
   <data name="_PropertyPanel.Text" xml:space="preserve">
     <value>Property panel</value>
