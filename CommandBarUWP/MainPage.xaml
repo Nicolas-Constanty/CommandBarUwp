@@ -7,24 +7,23 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:customControl="using:CommandBarUWP.CustomControl"
     mc:Ignorable="d">
-
+    
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <!--<RelativePanel>-->
-        <Grid Background="#424242">
+        <Grid Background="{ThemeResource SystemControlHighlightAccentBrush}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Button BorderThickness="0" 
-                    Background="{ThemeResource SystemControlHighlightAccentBrush}" 
+                    Background="Transparent"
                     Grid.Column="0" 
                     FontSize="30" FontFamily="Segoe MDL2 Assets" 
                     Content="&#xE700;"
-                    Click="HamburgerButton_Click" VerticalAlignment="Stretch" 
+                    Click="HamburgerButton_Click" VerticalAlignment="Stretch" Padding="12,8" 
                     />
             <customControl:MenuBar Grid.Column="1" x:Name="CommandBar" VerticalAlignment="Top" Background="#424242">
                 <customControl:MenuBar.MainCommands>
@@ -38,7 +37,6 @@
                             <customControl:CommandButton x:Uid="_Delete"/>
                             <customControl:CommandButton x:Uid="_SelectAll"/>
                             <customControl:CommandButton x:Uid="_InvertSelect"/>
-                            <customControl:CommandButton x:Uid="_Settings" Click="ChangeLanguage"/>
                         </customControl:Command.SubCommands>
                     </customControl:Command>
                     <customControl:Command x:Uid="_View" FontSize="20" Text="View" ClickCommand="Command_ClickCommand">
@@ -112,32 +110,56 @@
                 </customControl:MenuBar.MainCommands>
             </customControl:MenuBar>
         </Grid>
-        <!--</RelativePanel>-->
         <SplitView Name="MySplitView" 
                    Grid.Row="1" 
                    DisplayMode="CompactOverlay" 
                    OpenPaneLength="256" 
-                   CompactPaneLength="0" 
-                   HorizontalAlignment="Left">
+                   CompactPaneLength="54" 
+                   HorizontalAlignment="Left"
+                   >
             <SplitView.Pane>
-                <ListBox SelectionMode="Single" 
-                         Name="IconsListBox">
-                    <ListBoxItem >
-                        <customControl:CommandButton FontSize="24" x:Uid="_NewWindow" Text="New Window"/>
-                    </ListBoxItem>
-                    <ListBoxItem >
-                        <customControl:CommandButton FontSize="24" x:Uid="_OpenProject" Text="Open project"/>
-                    </ListBoxItem>
-                    <ListBoxItem >
-                        <customControl:CommandButton FontSize="24" x:Uid="_Save" Text="Save"/>
-                    </ListBoxItem>
-                    <ListBoxItem >
-                        <customControl:CommandButton FontSize="24" x:Uid="_SaveAs" Text="Save as"/>
-                    </ListBoxItem>
-                    <ListBoxItem >
-                        <customControl:CommandButton FontSize="24" x:Uid="_SaveAll" Text="Save all"/>
-                    </ListBoxItem>
-                </ListBox>
+                <Grid Background="{ThemeResource SystemControlHighlightListAccentLowBrush}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <ListBox Grid.Row="0" SelectionMode="Single" 
+                         Name="IconsListBox"
+                             Background="Transparent" >
+                        <ListBoxItem >
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="30" Text="&#xE8F4;" Padding="0,12" Margin="0,0,6,0"></TextBlock>
+                                <TextBlock FontSize="20" x:Uid="_NewWindow" Text="New Window" Padding="8,12"></TextBlock>
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem >
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="30" Text="&#xE8DA;" Padding="0,12" Margin="0,0,6,0"></TextBlock>
+                                <TextBlock FontSize="20" x:Uid="_OpenProject" Text="Open project" Padding="8,12"></TextBlock>
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem >
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="30" Padding="0,12" Text="&#xE74E;" Margin="0,0,6,0"></TextBlock>
+                                <TextBlock FontSize="20" x:Uid="_Save" Text="Save" Padding="8,12"></TextBlock>
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem >
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="30" Padding="0,12" Text="&#xE78C;" Margin="0,0,6,0"></TextBlock>
+                                <TextBlock FontSize="20" x:Uid="_SaveAs" Text="Save as" Padding="8,12"></TextBlock>
+                            </StackPanel>
+                        </ListBoxItem>
+                    </ListBox>
+                    <Border Grid.Row="1" BorderThickness="0,1,0,0" BorderBrush="{ThemeResource SystemControlHighlightBaseLowBrush}"  VerticalAlignment="Bottom" HorizontalAlignment="Stretch" >
+                        <Button BorderThickness="0" Background="Transparent" Click="ChangeLanguage" HorizontalContentAlignment="Stretch" HorizontalAlignment="Stretch">
+                            <StackPanel  Orientation="Horizontal" VerticalAlignment="Center">
+                                <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="22" Text="&#xE713;" Padding="8,12" VerticalAlignment="Center"></TextBlock>
+                                <TextBlock FontSize="14" x:Uid="_Settings" Text="Save all" Padding="8,12" VerticalAlignment="Center"></TextBlock>
+                            </StackPanel>
+                        </Button>
+                    </Border>
+                </Grid>
             </SplitView.Pane>
             <SplitView.Content>
                 <TextBlock Name="ResultTextBlock" />

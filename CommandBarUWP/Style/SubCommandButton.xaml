@@ -15,6 +15,7 @@
             <SolidColorBrush x:Key="ControlBackgroundBaseLowBrush" Color="Transparent"/>
             <SolidColorBrush x:Key="HighlightSubCommand" Color="SlateGray"/>
             <SolidColorBrush x:Key="HighlightCommand" Color="SlateGray"/>
+            <SolidColorBrush x:Key="ApplicationPageBackgroundThemeBrush" Color="#161616"/>
         </ResourceDictionary>
     </ResourceDictionary.ThemeDictionaries>
 

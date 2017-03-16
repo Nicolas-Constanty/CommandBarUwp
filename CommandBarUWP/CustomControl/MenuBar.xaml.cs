@@ -143,7 +143,13 @@ namespace CommandBarUWP.CustomControl
 
         public void SelectMenu(Command cmd)
         {
-            if (cmd == _current || cmd == null)
+            if (cmd == _current)
+            {
+                Collapse();
+                _current = null;
+                return;
+            }
+            if (cmd == null)
                 return;
             if (_current != null)
                 _current.Background = _baseBrush;
