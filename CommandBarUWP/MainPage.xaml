@@ -14,24 +14,96 @@
             <customControl:MenuBar.MainCommands>
                 <customControl:Command x:Uid="_File" Text="File" ClickCommand="Command_ClickCommand">
                     <customControl:Command.SubCommands>
-                        <Button Content="Test1"></Button>
-                        <Button Content="Test2"></Button>
+                        <Button Content="New Window"></Button>
+                        <Button Content="New Project"></Button>
+                        <Button Content="Open Project"></Button>
+                        <Button Content="Save"></Button>
+                        <Button Content="Save As"></Button>
+                        <Button Content="Save All"></Button>
+                        <Button Content="Close"></Button>
                     </customControl:Command.SubCommands>
                 </customControl:Command>
                 <customControl:Command x:Uid="_Edit" Text="Edit" ClickCommand="Command_ClickCommand">
                     <customControl:Command.SubCommands>
-                        <Button Content="Test1"></Button>
+                        <Button Content="Undo"></Button>
+                        <Button Content="Redo"></Button>
+                        <Button Content="Cut"></Button>
+                        <Button Content="Copy"></Button>
+                        <Button Content="Paste"></Button>
+                        <Button Content="Delete"></Button>
+                        <Button Content="Select All"></Button>
+                        <Button Content="Invert Select"></Button>
+                        <Button Content="Settings"></Button>
                     </customControl:Command.SubCommands>
                 </customControl:Command>
-                <customControl:Command x:Uid="_View" Text="View" ClickCommand="Command_ClickCommand"></customControl:Command>
-                <customControl:Command x:Uid="_Panes" Text="Panes" ClickCommand="Command_ClickCommand"></customControl:Command>
-                <customControl:Command x:Uid="_Tab" Text="Tab" ClickCommand="Command_ClickCommand"></customControl:Command>
+                <customControl:Command x:Uid="_View" Text="View" ClickCommand="Command_ClickCommand">
+                    <customControl:Command.SubCommands>
+                        <Button Content="Full screen"></Button>
+                        <Button Content="Menu bar"></Button>
+                        <Button Content="Font size up"></Button>
+                        <Button Content="Font size down"></Button>
+                        <Button Content="Reset font size"></Button>
+                        <Button Content="Console"></Button>
+                        <Button Content="Property panel"></Button>
+                    </customControl:Command.SubCommands>
+                </customControl:Command>
+                <customControl:Command x:Uid="_Panes" Text="Panes" ClickCommand="Command_ClickCommand">
+                    <customControl:Command.SubCommands>
+                        <Button Content="SplitLeft"></Button>
+                        <Button Content="SplitRight"></Button>
+                        <Button Content="SplitUp"></Button>
+                        <Button Content="SplitDown"></Button>
+                        <Button Content="NextPane"></Button>
+                        <Button Content="PrevPane"></Button>
+                    </customControl:Command.SubCommands>
+                </customControl:Command>
+                <customControl:Command x:Uid="_Tab" Text="Tab" ClickCommand="Command_ClickCommand">
+                    <customControl:Command.SubCommands>
+                        <Button Content="NextTab"></Button>
+                        <Button Content="PrevTab"></Button>
+                        <Button Content="CloseTab"></Button>
+                        <Button Content="History"></Button>
+                    </customControl:Command.SubCommands>
+                </customControl:Command>
                 <customControl:Command x:Uid="_Viewport" Text="Viewport" ClickCommand="Command_ClickCommand"></customControl:Command>
-                <customControl:Command x:Uid="_Node" Text="Node" ClickCommand="Command_ClickCommand"></customControl:Command>
-                <customControl:Command x:Uid="_Run" Text="Run" ClickCommand="Command_ClickCommand"></customControl:Command>
-                <customControl:Command x:Uid="_Cloud" Text="Cloud"  ClickCommand="Command_ClickCommand"></customControl:Command>
-                <customControl:Command x:Uid="_Help" Text="Help" ClickCommand="Command_ClickCommand"></customControl:Command>
-                <customControl:Command x:Uid="_Versionning" Text="Versionning" ClickCommand="Command_ClickCommand"></customControl:Command>
+                <customControl:Command x:Uid="_Node" Text="Node" ClickCommand="Command_ClickCommand">
+                    <customControl:Command.SubCommands>
+                        <Button Content="New node"></Button>
+                        <Button Content="Delete node"></Button>
+                        <Button Content="Import node"></Button>
+                        <Button Content="Export node"></Button>
+                    </customControl:Command.SubCommands>
+                </customControl:Command>
+                <customControl:Command x:Uid="_Run" Text="Run" ClickCommand="Command_ClickCommand">
+                    <customControl:Command.SubCommands>
+                        <Button Content="Build"></Button>
+                        <Button Content="Run"></Button>
+                        <Button Content="Run debug"></Button>
+                        <Button Content="Pause"></Button>
+                        <Button Content="Stop"></Button>
+                    </customControl:Command.SubCommands>
+                </customControl:Command>
+                <customControl:Command x:Uid="_Cloud" Text="Cloud"  ClickCommand="Command_ClickCommand">
+                    <customControl:Command.SubCommands>
+                        <Button Content="Upload"></Button>
+                        <Button Content="Download"></Button>
+                        <Button Content="Store"></Button>
+                    </customControl:Command.SubCommands>
+                </customControl:Command>
+                <customControl:Command x:Uid="_Help" Text="Help" ClickCommand="Command_ClickCommand">
+                    <customControl:Command.SubCommands>
+                        <Button Content="About"></Button>
+                        <Button Content="Documentation"></Button>
+                    </customControl:Command.SubCommands>
+                </customControl:Command>
+                <customControl:Command x:Uid="_Versionning" Text="Versionning" ClickCommand="Command_ClickCommand">
+                    <customControl:Command.SubCommands>
+                        <Button Content="New repo"></Button>
+                        <Button Content="Clone repo"></Button>
+                        <Button Content="Synchronize"></Button>
+                        <Button Content="Push"></Button>
+                    </customControl:Command.SubCommands>
+                </customControl:Command>
             </customControl:MenuBar.MainCommands>
         </customControl:MenuBar>
     </Grid>

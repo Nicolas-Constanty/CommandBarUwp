@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Windows.Input;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Animation;
 
 // The User Control item template is documented at https://go.microsoft.com/fwlink/?LinkId=234236
@@ -12,88 +13,77 @@ namespace CommandBarUWP.CustomControl
 {
     public sealed partial class MenuBar : UserControl
     {
-        private bool _expend = false;
         private Command _current = null;
-        private Storyboard SlideOut = null;
-        private Storyboard SlideIn = null;
+        private Storyboard _slideOut = null;
+        private Storyboard _slideIn = null;
+        private SolidColorBrush _activeBrush;
+        private SolidColorBrush _baseBrush;
 
         public MenuBar()
         {
             this.InitializeComponent();
-            
+            _activeBrush = new SolidColorBrush(Windows.UI.Colors.Gray);
+            _baseBrush = new SolidColorBrush(Windows.UI.Colors.Transparent);
+        }
+
+        private DoubleAnimationUsingKeyFrames CreateYAnimation(double value, double time)
+        {
+            DoubleAnimationUsingKeyFrames animationKeyFrames = new DoubleAnimationUsingKeyFrames();
+
+            var keyFrameStart = new SplineDoubleKeyFrame();
+            keyFrameStart.KeyTime = KeyTime.FromTimeSpan(TimeSpan.FromMilliseconds(time));
+            keyFrameStart.Value = value;
+
+            animationKeyFrames.KeyFrames.Add(keyFrameStart);
+
+            Storyboard.SetTargetProperty(animationKeyFrames, "Y");
+            Storyboard.SetTarget(animationKeyFrames, SlideInTransform);
+            return animationKeyFrames;
+        }
+
+        private DoubleAnimationUsingKeyFrames CreateOpacityAnimation(double value, double time)
+        {
+            DoubleAnimationUsingKeyFrames animationKeyFramesOpacity = new DoubleAnimationUsingKeyFrames();
+
+            var keyFrameStartOpacity = new SplineDoubleKeyFrame();
+            keyFrameStartOpacity.KeyTime = KeyTime.FromTimeSpan(TimeSpan.FromMilliseconds(time));
+            keyFrameStartOpacity.Value = value;
+
+            animationKeyFramesOpacity.KeyFrames.Add(keyFrameStartOpacity);
+
+            Storyboard.SetTargetProperty(animationKeyFramesOpacity, "Opacity");
+            Storyboard.SetTarget(animationKeyFramesOpacity, SubMenuPanel);
+
+            return animationKeyFramesOpacity;
         }
 
         private void InitSlideIn()
         {
-            SlideIn = new Storyboard();
-            DoubleAnimationUsingKeyFrames animationKeyFrames = new DoubleAnimationUsingKeyFrames();
+            _slideIn = new Storyboard();
 
-            var keyFrameStart = new SplineDoubleKeyFrame();
-            keyFrameStart.KeyTime = KeyTime.FromTimeSpan(TimeSpan.FromMilliseconds(150));
-            keyFrameStart.Value = 0;
+            _slideIn.Children.Add(CreateYAnimation(0, 150));
+            _slideIn.Children.Add(CreateOpacityAnimation(1, 200));
 
-            animationKeyFrames.KeyFrames.Add(keyFrameStart);
-
-            Storyboard.SetTargetProperty(animationKeyFrames, "Y");
-            Storyboard.SetTarget(animationKeyFrames, SlideInTransform);
-
-            DoubleAnimationUsingKeyFrames animationKeyFramesOpacity = new DoubleAnimationUsingKeyFrames();
-
-            var keyFrameStartOpacity = new SplineDoubleKeyFrame();
-            keyFrameStartOpacity.KeyTime = KeyTime.FromTimeSpan(TimeSpan.FromMilliseconds(200));
-            keyFrameStartOpacity.Value = 1;
-
-            animationKeyFramesOpacity.KeyFrames.Add(keyFrameStartOpacity);
-
-            Storyboard.SetTargetProperty(animationKeyFramesOpacity, "Opacity");
-            Storyboard.SetTarget(animationKeyFramesOpacity, SubMenuPanel);
-
-            SlideIn.Children.Add(animationKeyFrames);
-            SlideIn.Children.Add(animationKeyFramesOpacity);
-
-            SlideIn.Completed += SlideIn_Completed;
+            _slideIn.Completed += SlideIn_Completed;
         }
 
         private void InitSlideOut()
         {
-            SlideOut = new Storyboard();
-            DoubleAnimationUsingKeyFrames animationKeyFrames = new DoubleAnimationUsingKeyFrames();
+            _slideOut = new Storyboard();
 
-            var keyFrameStart = new SplineDoubleKeyFrame();
-            keyFrameStart.KeyTime = KeyTime.FromTimeSpan(TimeSpan.FromMilliseconds(200));
-            keyFrameStart.Value = -SubMenuPanel.ActualHeight;
+            _slideOut.Children.Add(CreateYAnimation(-SubMenuPanel.ActualHeight, 200));
+            _slideOut.Children.Add(CreateOpacityAnimation(0, 150));
 
-            animationKeyFrames.KeyFrames.Add(keyFrameStart);
-
-            Storyboard.SetTargetProperty(animationKeyFrames, "Y");
-            Storyboard.SetTarget(animationKeyFrames, SlideInTransform);
-
-            DoubleAnimationUsingKeyFrames animationKeyFramesOpacity = new DoubleAnimationUsingKeyFrames();
-
-            var keyFrameStartOpacity = new SplineDoubleKeyFrame();
-            keyFrameStartOpacity.KeyTime = KeyTime.FromTimeSpan(TimeSpan.FromMilliseconds(150));
-            keyFrameStartOpacity.Value = 0;
-
-            animationKeyFramesOpacity.KeyFrames.Add(keyFrameStartOpacity);
-
-            Storyboard.SetTargetProperty(animationKeyFramesOpacity, "Opacity");
-            Storyboard.SetTarget(animationKeyFramesOpacity, SubMenuPanel);
-
-            SlideOut.Children.Add(animationKeyFrames);
-            SlideOut.Children.Add(animationKeyFramesOpacity);
-
-            SlideOut.Completed += SlideOut_Completed;
+            _slideOut.Completed += SlideOut_Completed;
         }
 
         private void SlideIn_Completed(object sender, object e)
         {
-            _expend = true;
         }
 
         private void SlideOut_Completed(object sender, object e)
         {
             SubMenuPanel.Visibility = Visibility.Collapsed;
-            _expend = false;
         }
 
         public static readonly DependencyProperty MainCommandsProperty =
@@ -125,9 +115,9 @@ namespace CommandBarUWP.CustomControl
             }
             CurrentSubCommands = _current.SubCommands;
             SubMenuPanel.Visibility = Visibility.Visible;
-            if (SlideIn == null)
+            if (_slideIn == null)
                 InitSlideIn();
-            SlideIn.Begin();
+            _slideIn.Begin();
         }
 
         public static readonly DependencyProperty SubCommandsProperty =
@@ -142,16 +132,19 @@ namespace CommandBarUWP.CustomControl
 
         private void Collapse()
         {
-            if (SlideOut == null)
+            if (_slideOut == null)
                 InitSlideOut();
-            SlideOut.Begin();
+            _slideOut.Begin();
         }
 
         public void SelectMenu(Command cmd)
         {
             if (cmd == _current || cmd == null)
                 return;
+            if (_current != null)
+                _current.Background = _baseBrush;
             _current = cmd;
+            _current.Background = _activeBrush;
            Expend();
         }
     }

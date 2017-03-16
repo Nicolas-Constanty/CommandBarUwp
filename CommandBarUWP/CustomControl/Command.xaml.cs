@@ -33,9 +33,7 @@ namespace CommandBarUWP.CustomControl
         public ObservableCollection<FrameworkElement> SubCommands
         {
             get { return (ObservableCollection<FrameworkElement>)GetValue(SubCommandsProperty); }
-            set {
-                SetValue(SubCommandsProperty, value);
-            }
+            set { SetValue(SubCommandsProperty, value); }
         }
 
         private EventRegistrationTokenTable<EventHandler<RoutedEventArgs>> m_RoutedEvent = null;
