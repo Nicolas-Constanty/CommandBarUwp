@@ -86,7 +86,7 @@ namespace CommandBarUWP.CustomControl
             SubMenuPanel.Visibility = Visibility.Collapsed;
         }
 
-        public static readonly DependencyProperty MainCommandsProperty =
+        public readonly DependencyProperty MainCommandsProperty =
         DependencyProperty.Register("MainCommands", typeof(ObservableCollection<FrameworkElement>), typeof(MenuBar), new PropertyMetadata(new ObservableCollection<FrameworkElement>()));
 
         public ObservableCollection<FrameworkElement> MainCommands
@@ -97,7 +97,7 @@ namespace CommandBarUWP.CustomControl
             }
         }
 
-        public static readonly DependencyProperty CommanHeightProperty =
+        public readonly DependencyProperty CommanHeightProperty =
         DependencyProperty.Register("CommandHeight", typeof(int), typeof(MenuBar), new PropertyMetadata(Double.NaN));
 
         public int CommandHeight
@@ -120,7 +120,7 @@ namespace CommandBarUWP.CustomControl
             _slideIn.Begin();
         }
 
-        public static readonly DependencyProperty SubCommandsProperty =
+        public readonly DependencyProperty SubCommandsProperty =
             DependencyProperty.Register("CurrentSubCommands", typeof(ObservableCollection<FrameworkElement>), typeof(MenuBar),
                 new PropertyMetadata(new ObservableCollection<FrameworkElement>()));
 

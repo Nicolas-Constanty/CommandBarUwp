@@ -27,8 +27,9 @@ namespace CommandBarUWP
     {
         public MainPage()
         {
-            
             this.InitializeComponent();
+            Windows.ApplicationModel.Resources.Core.ResourceContext.GetForCurrentView().Reset();
+            Windows.ApplicationModel.Resources.Core.ResourceContext.GetForViewIndependentUse().Reset();
         }
 
         private void Command_ClickCommand(object sender, RoutedEventArgs e)
@@ -38,16 +39,10 @@ namespace CommandBarUWP
 
         private void ChangeLanguage(object sender, RoutedEventArgs e)
         {
-            if (ApplicationLanguages.PrimaryLanguageOverride == "en-US")
-            {
-                var culture = new System.Globalization.CultureInfo("fr-FR");
-                ApplicationLanguages.PrimaryLanguageOverride = culture.Name;
-            }
+            if (ApplicationLanguages.PrimaryLanguageOverride == "en")
+                ApplicationLanguages.PrimaryLanguageOverride = "fr";
             else
-            {
-                var culture = new System.Globalization.CultureInfo("en-US");
-                ApplicationLanguages.PrimaryLanguageOverride = culture.Name;
-            }
+                ApplicationLanguages.PrimaryLanguageOverride = "en";
 
             Windows.ApplicationModel.Resources.Core.ResourceContext.GetForCurrentView().Reset();
             Windows.ApplicationModel.Resources.Core.ResourceContext.GetForViewIndependentUse().Reset();
