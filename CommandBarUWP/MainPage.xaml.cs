@@ -7,6 +7,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Globalization;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -26,12 +27,47 @@ namespace CommandBarUWP
     {
         public MainPage()
         {
+            
             this.InitializeComponent();
         }
 
         private void Command_ClickCommand(object sender, RoutedEventArgs e)
         {
             CommandBar.SelectMenu((Command)sender);
+        }
+
+        private void ChangeLanguage(object sender, RoutedEventArgs e)
+        {
+            if (ApplicationLanguages.PrimaryLanguageOverride == "en-US")
+            {
+                var culture = new System.Globalization.CultureInfo("fr-FR");
+                ApplicationLanguages.PrimaryLanguageOverride = culture.Name;
+            }
+            else
+            {
+                var culture = new System.Globalization.CultureInfo("en-US");
+                ApplicationLanguages.PrimaryLanguageOverride = culture.Name;
+            }
+
+            Windows.ApplicationModel.Resources.Core.ResourceContext.GetForCurrentView().Reset();
+            Windows.ApplicationModel.Resources.Core.ResourceContext.GetForViewIndependentUse().Reset();
+
+            Reload();
+        }
+
+        private bool Reload(object param = null)
+        {
+            var type = Frame.CurrentSourcePageType;
+
+            try
+            {
+                return Frame.Navigate(type, param);
+            }
+            finally
+            {
+                Frame.BackStack.Remove(Frame.BackStack.Last());
+            }
+
         }
     }
 }

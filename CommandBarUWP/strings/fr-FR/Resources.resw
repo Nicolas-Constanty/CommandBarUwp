@@ -117,21 +117,50 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="File.Text" xml:space="preserve">
-    <value>toto</value>
-    <comment>z</comment>
+  <data name="_About.Text" xml:space="preserve">
+    <value>A propos</value>
+  </data>
+  <data name="_Build.Text" xml:space="preserve">
+    <value>Build</value>
+  </data>
+  <data name="_CloneRepo.Text" xml:space="preserve">
+    <value>Clone repository</value>
   </data>
   <data name="_Close.Text" xml:space="preserve">
     <value>Fermer</value>
   </data>
+  <data name="_CloseTab.Text" xml:space="preserve">
+    <value>Fermer l'onglet</value>
+  </data>
   <data name="_Cloud.Text" xml:space="preserve">
     <value>Cloud</value>
+  </data>
+  <data name="_Console.Text" xml:space="preserve">
+    <value>Console</value>
+  </data>
+  <data name="_Copy.Text" xml:space="preserve">
+    <value>Copier</value>
   </data>
   <data name="_Culture.Text" xml:space="preserve">
     <value>fr-FR</value>
   </data>
   <data name="_Culture_Lang.Text" xml:space="preserve">
     <value>Français</value>
+  </data>
+  <data name="_Cut.Text" xml:space="preserve">
+    <value>Couper</value>
+  </data>
+  <data name="_Delete.Text" xml:space="preserve">
+    <value>Supprimer</value>
+  </data>
+  <data name="_DeleteNode.Text" xml:space="preserve">
+    <value>Supprimer node</value>
+  </data>
+  <data name="_Documentation.Text" xml:space="preserve">
+    <value>Documentation</value>
+  </data>
+  <data name="_Download.Text" xml:space="preserve">
+    <value>Télécharger</value>
   </data>
   <data name="_Edit.Text" xml:space="preserve">
     <value>Edition</value>
@@ -142,14 +171,35 @@
   <data name="_Exit.Text" xml:space="preserve">
     <value>Sortir</value>
   </data>
+  <data name="_ExportNode.Text" xml:space="preserve">
+    <value>Exporter une node</value>
+  </data>
   <data name="_File.Text" xml:space="preserve">
     <value>Fichier</value>
+  </data>
+  <data name="_FontSizeDown.Text" xml:space="preserve">
+    <value>Réduire la police</value>
+  </data>
+  <data name="_FontSizeUp.Text" xml:space="preserve">
+    <value>Grossir la police</value>
   </data>
   <data name="_French.Text" xml:space="preserve">
     <value>Français</value>
   </data>
+  <data name="_FullScreen.Text" xml:space="preserve">
+    <value>Plein écran</value>
+  </data>
   <data name="_Help.Text" xml:space="preserve">
     <value>Aide</value>
+  </data>
+  <data name="_History.Text" xml:space="preserve">
+    <value>Historique</value>
+  </data>
+  <data name="_ImportNode.Text" xml:space="preserve">
+    <value>Importer une node</value>
+  </data>
+  <data name="_InvertSelect.Text" xml:space="preserve">
+    <value>Inverser la sélection</value>
   </data>
   <data name="_Language.Text" xml:space="preserve">
     <value>Langue</value>
@@ -157,29 +207,110 @@
   <data name="_Languages.Text" xml:space="preserve">
     <value>Langues</value>
   </data>
+  <data name="_MenuBar.Text" xml:space="preserve">
+    <value>Barre des menus</value>
+  </data>
+  <data name="_NewNode.Text" xml:space="preserve">
+    <value>Nouvelle node</value>
+  </data>
+  <data name="_NewProject.Text" xml:space="preserve">
+    <value>Nouveau projet</value>
+  </data>
+  <data name="_NewRepo.Text" xml:space="preserve">
+    <value>Nouveau repository</value>
+  </data>
+  <data name="_NewWindow.Text" xml:space="preserve">
+    <value>Nouvelle fenêtre</value>
+  </data>
+  <data name="_NextPane.Text" xml:space="preserve">
+    <value>Panneau suivant</value>
+  </data>
   <data name="_Node.Text" xml:space="preserve">
     <value>Node</value>
   </data>
   <data name="_Open.Text" xml:space="preserve">
     <value>Ouvrir</value>
   </data>
+  <data name="_OpenProject.Text" xml:space="preserve">
+    <value>Ouvrir un projet</value>
+  </data>
   <data name="_Panes.Text" xml:space="preserve">
     <value>Panel</value>
+  </data>
+  <data name="_Paste.Text" xml:space="preserve">
+    <value>Coller</value>
+  </data>
+  <data name="_Pause.Text" xml:space="preserve">
+    <value>Pause</value>
+  </data>
+  <data name="_PrevPane.Text" xml:space="preserve">
+    <value>Panneau précédent</value>
+  </data>
+  <data name="_PropertyPanel.Text" xml:space="preserve">
+    <value>Propriétés</value>
+  </data>
+  <data name="_Push.Text" xml:space="preserve">
+    <value>Pousser</value>
   </data>
   <data name="_Quit.Text" xml:space="preserve">
     <value>Quitter</value>
   </data>
+  <data name="_Redo.Text" xml:space="preserve">
+    <value>Rétablir</value>
+  </data>
+  <data name="_ResetFontSize.Text" xml:space="preserve">
+    <value>Réinitialiser la police</value>
+  </data>
   <data name="_Run.Text" xml:space="preserve">
     <value>Executer</value>
   </data>
+  <data name="_RunDebug.Text" xml:space="preserve">
+    <value>Executer (Debug)</value>
+  </data>
   <data name="_Save.Text" xml:space="preserve">
-    <value>Sauvegarder</value>
+    <value>Enregistrer</value>
+  </data>
+  <data name="_SaveAll.Text" xml:space="preserve">
+    <value>Enregistrer tout</value>
+  </data>
+  <data name="_SaveAs.Text" xml:space="preserve">
+    <value>Enregistrer sous</value>
+  </data>
+  <data name="_SelectAll.Text" xml:space="preserve">
+    <value>Tout sélectionner</value>
   </data>
   <data name="_Settings.Text" xml:space="preserve">
     <value>Paramètres</value>
   </data>
+  <data name="_SplitDown.Text" xml:space="preserve">
+    <value>Diviser en bat</value>
+  </data>
+  <data name="_SplitLeft.Text" xml:space="preserve">
+    <value>Diviser à gauche</value>
+  </data>
+  <data name="_SplitRight.Text" xml:space="preserve">
+    <value>Diviser à droite</value>
+  </data>
+  <data name="_SplitUp.Text" xml:space="preserve">
+    <value>Diviser en haut</value>
+  </data>
+  <data name="_Stop.Text" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="_Store.Text" xml:space="preserve">
+    <value>Store</value>
+  </data>
+  <data name="_Synchronize.Text" xml:space="preserve">
+    <value>Synchroniser</value>
+  </data>
   <data name="_Tab.Text" xml:space="preserve">
-    <value>Tabulation</value>
+    <value>Onglet</value>
+  </data>
+  <data name="_Undo.Text" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="_Upload.Text" xml:space="preserve">
+    <value>Upload</value>
   </data>
   <data name="_Versionning.Text" xml:space="preserve">
     <value>Versionning</value>

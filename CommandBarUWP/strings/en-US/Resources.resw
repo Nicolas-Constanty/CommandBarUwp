@@ -117,21 +117,50 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="File.Text" xml:space="preserve">
-    <value>toto</value>
-    <comment>z</comment>
+  <data name="_About.Text" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="_Build.Text" xml:space="preserve">
+    <value>Build</value>
+  </data>
+  <data name="_CloneRepo.Text" xml:space="preserve">
+    <value>Clone repo</value>
   </data>
   <data name="_Close.Text" xml:space="preserve">
     <value>Close</value>
   </data>
+  <data name="_CloseTab.Text" xml:space="preserve">
+    <value>Close tab</value>
+  </data>
   <data name="_Cloud.Text" xml:space="preserve">
     <value>Cloud</value>
+  </data>
+  <data name="_Console.Text" xml:space="preserve">
+    <value>Console</value>
+  </data>
+  <data name="_Copy.Text" xml:space="preserve">
+    <value>Copy</value>
   </data>
   <data name="_Culture.Text" xml:space="preserve">
     <value>en-EN</value>
   </data>
   <data name="_Culture_Lang.Text" xml:space="preserve">
     <value>English</value>
+  </data>
+  <data name="_Cut.Text" xml:space="preserve">
+    <value>Cut</value>
+  </data>
+  <data name="_Delete.Text" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="_DeleteNode.Text" xml:space="preserve">
+    <value>Delete node</value>
+  </data>
+  <data name="_Documentation.Text" xml:space="preserve">
+    <value>Documentation</value>
+  </data>
+  <data name="_Download.Text" xml:space="preserve">
+    <value>Download</value>
   </data>
   <data name="_Edit.Text" xml:space="preserve">
     <value>Edit</value>
@@ -142,14 +171,35 @@
   <data name="_Exit.Text" xml:space="preserve">
     <value>Exit</value>
   </data>
+  <data name="_ExportNode.Text" xml:space="preserve">
+    <value>Export node</value>
+  </data>
   <data name="_File.Text" xml:space="preserve">
     <value>File</value>
+  </data>
+  <data name="_FontSizeDown.Text" xml:space="preserve">
+    <value>Font size down</value>
+  </data>
+  <data name="_FontSizeUp.Text" xml:space="preserve">
+    <value>Font size up</value>
   </data>
   <data name="_French.Text" xml:space="preserve">
     <value>French</value>
   </data>
+  <data name="_FullScreen.Text" xml:space="preserve">
+    <value>Full screen</value>
+  </data>
   <data name="_Help.Text" xml:space="preserve">
     <value>Help</value>
+  </data>
+  <data name="_History.Text" xml:space="preserve">
+    <value>History</value>
+  </data>
+  <data name="_ImportNode.Text" xml:space="preserve">
+    <value>Import node</value>
+  </data>
+  <data name="_InvertSelect.Text" xml:space="preserve">
+    <value>Invert select</value>
   </data>
   <data name="_Language.Text" xml:space="preserve">
     <value>Language</value>
@@ -157,29 +207,110 @@
   <data name="_Languages.Text" xml:space="preserve">
     <value>Languages</value>
   </data>
+  <data name="_MenuBar.Text" xml:space="preserve">
+    <value>Menu bar</value>
+  </data>
+  <data name="_NewNode.Text" xml:space="preserve">
+    <value>New node</value>
+  </data>
+  <data name="_NewProject.Text" xml:space="preserve">
+    <value>New project</value>
+  </data>
+  <data name="_NewRepo.Text" xml:space="preserve">
+    <value>New repo</value>
+  </data>
+  <data name="_NewWindow.Text" xml:space="preserve">
+    <value>New window</value>
+  </data>
+  <data name="_NextPane.Text" xml:space="preserve">
+    <value>Next pane</value>
+  </data>
   <data name="_Node.Text" xml:space="preserve">
     <value>Node</value>
   </data>
   <data name="_Open.Text" xml:space="preserve">
     <value>Open</value>
   </data>
+  <data name="_OpenProject.Text" xml:space="preserve">
+    <value>Open project</value>
+  </data>
   <data name="_Panes.Text" xml:space="preserve">
     <value>Panes</value>
+  </data>
+  <data name="_Paste.Text" xml:space="preserve">
+    <value>Paste</value>
+  </data>
+  <data name="_Pause.Text" xml:space="preserve">
+    <value>Pause</value>
+  </data>
+  <data name="_PrevPane.Text" xml:space="preserve">
+    <value>Prev pane</value>
+  </data>
+  <data name="_PropertyPanel.Text" xml:space="preserve">
+    <value>Property panel</value>
+  </data>
+  <data name="_Push.Text" xml:space="preserve">
+    <value>Push</value>
   </data>
   <data name="_Quit.Text" xml:space="preserve">
     <value>Quit</value>
   </data>
+  <data name="_Redo.Text" xml:space="preserve">
+    <value>Redo</value>
+  </data>
+  <data name="_ResetFontSize.Text" xml:space="preserve">
+    <value>Reset font size</value>
+  </data>
   <data name="_Run.Text" xml:space="preserve">
     <value>Run</value>
+  </data>
+  <data name="_RunDebug.Text" xml:space="preserve">
+    <value>Run debug</value>
   </data>
   <data name="_Save.Text" xml:space="preserve">
     <value>Save</value>
   </data>
+  <data name="_SaveAll.Text" xml:space="preserve">
+    <value>Save all</value>
+  </data>
+  <data name="_SaveAs.Text" xml:space="preserve">
+    <value>Save as</value>
+  </data>
+  <data name="_SelectAll.Text" xml:space="preserve">
+    <value>Select all</value>
+  </data>
   <data name="_Settings.Text" xml:space="preserve">
     <value>Settings</value>
   </data>
+  <data name="_SplitDown.Text" xml:space="preserve">
+    <value>Split down</value>
+  </data>
+  <data name="_SplitLeft.Text" xml:space="preserve">
+    <value>Split left</value>
+  </data>
+  <data name="_SplitRight.Text" xml:space="preserve">
+    <value>Split right</value>
+  </data>
+  <data name="_SplitUp.Text" xml:space="preserve">
+    <value>Split up</value>
+  </data>
+  <data name="_Stop.Text" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="_Store.Text" xml:space="preserve">
+    <value>Store</value>
+  </data>
+  <data name="_Synchronize.Text" xml:space="preserve">
+    <value>Synchronize</value>
+  </data>
   <data name="_Tab.Text" xml:space="preserve">
     <value>Tab</value>
+  </data>
+  <data name="_Undo.Text" xml:space="preserve">
+    <value>Undo</value>
+  </data>
+  <data name="_Upload.Text" xml:space="preserve">
+    <value>Upload</value>
   </data>
   <data name="_Versionning.Text" xml:space="preserve">
     <value>Versionning</value>
